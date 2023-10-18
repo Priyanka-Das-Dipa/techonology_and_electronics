@@ -11,12 +11,12 @@ const Navbar = () => {
           </li>
          
           <li>
-            <NavLink className="underline font-medium" to="/blogs">
+            <NavLink className="underline font-medium" to="/addProduct">
             Add Product
             </NavLink>
           </li>
           <li>
-          <NavLink className="underline font-medium" to="/classes">
+          <NavLink className="underline font-medium" to="/myCart">
           My Cart
             </NavLink>
           </li>

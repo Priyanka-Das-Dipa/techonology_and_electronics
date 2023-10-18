@@ -14,8 +14,8 @@ const Home = () => {
             <p className="text-xl font-medium">
               Designing for mobile is the process of creating a web layout that
               adjusts to fit mobile screens and suits the needs of touchscreen
-              devices. But it's about more than having a condensed mobile
-              version of your desktop website — it's about actively optimizing
+              devices. But it is about more than having a condensed mobile
+              version of your desktop website — it is about actively optimizing
               for mobile users.
             </p>
           </div>
@@ -26,7 +26,7 @@ const Home = () => {
       </section>
 
       <section >
-    <h1 className="text-3xl font-semibold text-center my-6">Our Phone's Brand</h1>
+    <h1 className="text-3xl font-semibold text-center my-6">Our Phones Brand</h1>
         <div className="grid grid-cols-3 gap-10">
         {phonesBrand.map((phoneBrand) => (
           <div key={phoneBrand.id}>
