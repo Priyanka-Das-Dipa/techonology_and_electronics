@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "image_url": "https://i.ibb.co/CMK7t6T/Samsung-Phone.jpg",
+        "brand_name": "Samsung"
+    },
+    {
+        "id": 2,
+        "image_url": "https://i.ibb.co/vY2h0q3/realme-Phone.png",
+        "brand_name": "Realme"
+    },
+    {
+        "id": 3,
+        "image_url": "https://i.ibb.co/f8Kgjfj/Intel-Phone.png",
+        "brand_name": "Intel"
+    },
+    {
+        "id": 4,
+        "image_url": "https://i.ibb.co/jwKSjfp/m011t0447-b-social-sign-18sep22.jpg",
+        "brand_name": "Google"
+    },
+    {
+        "id": 5,
+        "image_url": "https://i.ibb.co/RPgs58Q/iphone-Brand.jpg",
+        "brand_name": "iPhone"
+    },
+    {
+        "id": 6,
+        "image_url": "https://i.ibb.co/s18m8vZ/sony-Phone.webp",
+        "brand_name": "Sony"
+    }
+]
