@@ -1,3 +1,6 @@
+import Swal from 'sweetalert2'
+
+
 const AddProduct = () => {
     const handleAddProduct = event =>{
         event.preventDefault()
@@ -7,14 +10,11 @@ const AddProduct = () => {
         const brandName = form.brandName.value;
         const price = form.price.value;
         const imageUrl = form.imageUrl.value;
+        const type = form.type.value;
         const description = form.description.value;
         const rating_1 = form.rating_1.value;
-        // const rating_2 = form.rating_2.value;
-        // const rating_3 = form.rating_3.value;
-        // const rating_4 = form.rating_4.value;
-        // const rating_5 = form.rating_5.value;
 
-        const newProduct = {name, brandName, price, imageUrl, description, rating_1,}
+        const newProduct = {name, brandName, price, imageUrl,type, description, rating_1,}
         console.log(newProduct)
 
         // sending data to the backend
@@ -28,6 +28,15 @@ const AddProduct = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
+            if(data.insertedId){
+              Swal.fire({
+                title: 'Success!',
+                text: 'Product added to the DB successfully!',
+                icon: 'success',
+                confirmButtonText: 'Done'
+              })
+            }
+
         })
 
 
@@ -69,6 +78,17 @@ const AddProduct = () => {
             type="text"
             placeholder="image url"
             name="imageUrl"
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text font-medium">Type</span>
+          </label>
+          <input
+            type="text"
+            placeholder="type "
+            name="type"
             className="input input-bordered w-full max-w-xs"
           />
         </div>

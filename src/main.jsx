@@ -10,6 +10,7 @@ import SignUp from "./components/pages/SignUp";
 import Root from "./root/Root";
 import AddProduct from "./components/addProduct/AddProduct";
 import MyCart from "./components/myCart/MyCart";
+import BrandDetail from "./components/pages/Branddetails";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/myCart",
         element: <MyCart></MyCart>
+      },{
+        path: "/brand/:id",
+        element: <BrandDetail></BrandDetail>
+
       }
     ],
   },

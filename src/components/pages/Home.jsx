@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Home = () => {
   const phonesBrand = useLoaderData();
@@ -26,10 +26,11 @@ const Home = () => {
       </section>
 
       <section >
-    <h1 className="text-3xl font-semibold text-center my-6">Our Phones Brand</h1>
+    <h1 className="text-3xl font-semibold text-center my-6">Our Brand</h1>
         <div className="grid grid-cols-3 gap-10">
         {phonesBrand.map((phoneBrand) => (
-          <div key={phoneBrand.id}>
+          <div  key={phoneBrand.id}>
+         <Link to={`/brand/${phoneBrand.id}`}>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
               <figure>
                 <img
@@ -45,6 +46,8 @@ const Home = () => {
                 </h2>
               </div>
             </div>
+         
+         </Link>
           </div>
         ))}
         </div>
