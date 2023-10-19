@@ -1,8 +1,12 @@
-# React + Vite
+# Technology & Electronics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features of the project:
++ There is a signIn and signUp page
++ There is Google Authentication
++ There is a Add product route for registered  user can add data to the Database.
++ There is Add to Card option where user can add there product. 
++ They can see their add to card product in Add Card route.
+git 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
