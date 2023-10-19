@@ -1,10 +1,11 @@
 import { useContext} from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation()
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -29,6 +30,7 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        navigate(location?.state ? location.state : "/")
       })
       .catch((error) => {
         console.error(error);
@@ -79,8 +81,7 @@ const Login = () => {
                   value="Login"
                   className="btn btn-primary"
                 />
-              </div>
-              <div className="form-control mt-6">
+                <br />
                 <input
                   onClick={handleGoogleSignIn}
                   type="submit"
@@ -88,6 +89,7 @@ const Login = () => {
                   className="btn btn-primary"
                 />
               </div>
+              
             </form>
           </div>
         </div>

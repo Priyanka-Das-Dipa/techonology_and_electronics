@@ -1,11 +1,12 @@
 import { Link, useLoaderData } from "react-router-dom";
+import FAQ from "./FAQ";
 
 const Home = () => {
   const phonesBrand = useLoaderData();
   // console.log(phoneBrand)
   return (
     <div>
-      <section className="grid grid-cols-2 gap-4">
+      <section className="grid md:grid-cols-2 grid-cols-1  gap-4">
         <div className="space-y-3 text-left flex justify-center items-center">
           <div className="space-y-5">
             <h2 className="text-5xl font-semibold">
@@ -27,11 +28,11 @@ const Home = () => {
 
       <section >
     <h1 className="text-3xl font-semibold text-center my-6">Our Brand</h1>
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
         {phonesBrand.map((phoneBrand) => (
           <div  key={phoneBrand.id}>
          <Link to={`/brand/${phoneBrand.id}`}>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+            <div className="card card-compact  bg-base-100 shadow-xl">
               <figure>
                 <img
                   
@@ -52,6 +53,11 @@ const Home = () => {
         ))}
         </div>
         
+      </section>
+
+      <section className="mt-10">
+
+        <FAQ></FAQ>
       </section>
     </div>
   );
