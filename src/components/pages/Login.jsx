@@ -1,6 +1,40 @@
-import { Link } from "react-router-dom";
+import { useContext} from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
+  const { signInUser, signInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        e.target.reset();
+        navigate(location?.state ? location.state : "/")
+        // navigate("/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div>
       <div className="hero h-[70vh] bg-base-200">
@@ -9,7 +43,7 @@ const Login = () => {
             Please Login Yourself
           </h1>
           <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -40,7 +74,19 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <input
+                  type="submit"
+                  value="Login"
+                  className="btn btn-primary"
+                />
+              </div>
+              <div className="form-control mt-6">
+                <input
+                  onClick={handleGoogleSignIn}
+                  type="submit"
+                  value="Login With Google"
+                  className="btn btn-primary"
+                />
               </div>
             </form>
           </div>
@@ -51,3 +97,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

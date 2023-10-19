@@ -1,7 +1,20 @@
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext)
+
+  const handleLogOut =()=>{
+    logOut()
+    .then(()=>{
+      console.log('user logOut')
+    })
+    .catch(error =>{
+      console.error(error)
+    })
+  }
     const navLinks = (
         <>
           <li>
@@ -63,7 +76,16 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link className="btn font-medium" to="/login">Login</Link>
+          {
+            user ?
+            <>
+            <span>{user.email}</span>
+            <Link onClick={handleLogOut} className="btn btn-sm font-medium" to="/login">Sign Out</Link>
+            </>
+            :
+            <Link className="btn btn-sm font-medium" to="/login">Sign In</Link>
+          }
+          
         </div>
       </div>
     </div>
