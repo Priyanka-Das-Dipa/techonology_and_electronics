@@ -1,7 +1,8 @@
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+// import './index.css'; 
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext)
@@ -15,6 +16,25 @@ const Navbar = () => {
       console.error(error)
     })
   }
+
+  const toggleTheme = () => {
+    const body = document.body;
+    body.classList.toggle("dark-theme");
+    const isDarkTheme = body.classList.contains("dark-theme");
+    localStorage.setItem("darkTheme", isDarkTheme);
+    const toggleButton = document.querySelector(".toggle");
+    toggleButton.checked = isDarkTheme;
+  };
+
+  useEffect(() => {
+    const isDarkTheme = localStorage.getItem("darkTheme") === "true";
+
+    if (isDarkTheme) {
+      document.body.classList.add("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
+  }, []);
     const navLinks = (
         <>
           <li>
@@ -61,7 +81,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {/* navlinks */}
+              
               {navLinks}
             </ul>
           </div>
@@ -70,7 +90,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            {/* navlinks */}
+            
           {navLinks}
           
           </ul>
@@ -87,6 +107,8 @@ const Navbar = () => {
           }
           
         </div>
+        
+          <input onClick={toggleTheme}   type="checkbox" className="toggle toggle-sm" checked />
       </div>
     </div>
   );
