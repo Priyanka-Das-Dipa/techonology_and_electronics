@@ -1,6 +1,7 @@
 import { useContext} from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
@@ -20,6 +21,11 @@ const Login = () => {
         e.target.reset();
         navigate(location?.state ? location.state : "/")
         // navigate("/");
+        Swal.fire({
+          icon: "success",
+          title: "Login successful!",
+          text: "You can now Browse our website properly.",
+        });
       })
       .catch((error) => {
         console.error(error);
@@ -31,6 +37,11 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         navigate(location?.state ? location.state : "/")
+        Swal.fire({
+          icon: "success",
+          title: "Registration successful!",
+          text: "You can now log in with your credentials.",
+        });
       })
       .catch((error) => {
         console.error(error);

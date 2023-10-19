@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useContext, useState } from "react";
@@ -13,8 +14,8 @@ const SignUp = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    console.log(name)
 
-    // Password validation checks
     if (password.length < 6) {
       setPasswordError("Password must be at least 6 characters long.");
     } else if (!/[A-Z]/.test(password)) {
@@ -37,6 +38,11 @@ const SignUp = () => {
         })
         .catch((error) => {
           console.error(error);
+          Swal.fire({
+            icon: "error",
+            title: "Registration can not in place!",
+            text: "Please Try Again.",
+          });
         });
     }
   };
@@ -45,6 +51,11 @@ const SignUp = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        Swal.fire({
+          icon: "success",
+          title: "Registration successful!",
+          text: "You can now log in with your credentials.",
+        });
       })
       .catch((error) => {
         console.error(error);
@@ -53,12 +64,12 @@ const SignUp = () => {
 
   return (
     <div>
-      <div className="flex justify-center h-[70vh] bg-base-200">
+      <div className="flex justify-center h-[70vh] ">
         <div className="">
           <h1 className="text-2xl text-center font-semibold mb-5">
             Please Register Yourself
           </h1>
-          <div className="card my-10 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card my-10 w-full max-w-sm shadow-2xl ">
             <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">

@@ -13,7 +13,7 @@ const FAQ = () => {
         </div>
 
         <div data-aos="zoom-in-left" data-aos-duration="2000">
-          <div className="collapse collapse-arrow bg-slate-50 mb-2 ">
+          <div className="collapse collapse-arrow  mb-2 ">
             <input type="radio" name="my-accordion-2" checked="checked" />
             <div className="collapse-title text-2xl font-semibold ">
             Do you offer a warranty on your products?
@@ -26,7 +26,7 @@ const FAQ = () => {
           </div>
           <div className="collapse collapse-arrow mb-2">
             <input type="radio" name="my-accordion-2" />
-            <div className="collapse-title text-xl bg-slate-50 font-semibold">
+            <div className="collapse-title text-xl  font-semibold">
             Do you offer international shipping?
             </div>
             <div className="collapse-content text-xl">
@@ -35,7 +35,7 @@ const FAQ = () => {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-slate-50 mb-2">
+          <div className="collapse collapse-arrow  mb-2">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-semibold shadow-lg shadow-black">
             Can I return or exchange a product?
@@ -46,7 +46,7 @@ const FAQ = () => {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-slate-50 mb-2">
+          <div className="collapse collapse-arrow  mb-2">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-semibold">
             How long does it take to deliver the products?
@@ -57,7 +57,7 @@ const FAQ = () => {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-slate-50 mb-2">
+          <div className="collapse collapse-arrow  mb-2">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-semibold">
             Do you offer a warranty on your products?
