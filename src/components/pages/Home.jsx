@@ -31,7 +31,7 @@ const Home = () => {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
         {phonesBrand.map((phoneBrand) => (
           <div  key={phoneBrand.id}>
-         <Link to={`/brand/${phoneBrand.id}`}>
+         <Link to={`/brand/${phoneBrand.brand_name}`}>
             <div className="card card-compact  bg-base-100 shadow-xl">
               <figure>
                 <img

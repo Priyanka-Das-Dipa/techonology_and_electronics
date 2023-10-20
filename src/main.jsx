@@ -13,6 +13,7 @@ import MyCart from "./components/myCart/MyCart";
 import BrandDetail from "./components/pages/Branddetails";
 import AuthProvider from "./provider/AuthProvider";
 import PrivateRoute from "./root/PrivateRoute";
+import BrandItems from "./components/pages/BrandItems";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/myCart",
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
+      },
+      {
+        path: "/brand/:brandName",
+        element: <BrandItems />,
       },
       {
         path: "/brand/:id",

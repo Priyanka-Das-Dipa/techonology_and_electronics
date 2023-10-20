@@ -20,7 +20,6 @@ const BrandDetail = () => {
 
     fetchData();
   }, [id]);
-
   return (
     <div>
       {brandData ? (
