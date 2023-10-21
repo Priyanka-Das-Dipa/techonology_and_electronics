@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
+import {  Link, useParams } from "react-router-dom";
 
 const BrandItems = () => {
   const { brandName } = useParams();
@@ -7,7 +7,7 @@ const BrandItems = () => {
 
   console.log(brandName);
   useEffect(() => {
-    fetch("http://localhost:5000/iPhone")
+    fetch("https://technology-and-electronics-server-qpndtqici-priyanka-das-dipa.vercel.app/iPhone")
       .then((res) => res.json())
       .then((data) => {
         const filteredBrand = data.filter(
@@ -56,9 +56,14 @@ const BrandItems = () => {
                 </div>
                 <div className="rating">{renderStars(phone.rating)}</div>
                 <div className="card-actions justify-end">
+                  <Link to={`/brand/${phone.brandName}/${phone._id}`}>
+                  
                   <div className="btn btn-sm">Details</div>
+                  </Link>
+                  <Link  to={`/update/${phone._id}`}>
                   
                   <button className="btn btn-sm">Update</button>
+                  </Link>
                   
                 </div>
               </div>

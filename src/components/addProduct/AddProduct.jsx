@@ -18,7 +18,7 @@ const AddProduct = () => {
         console.log(newProduct)
 
         // sending data to the backend
-        fetch('http://localhost:5000/iPhone',{
+        fetch('https://technology-and-electronics-server-dun.vercel.app/iPhone',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,7 +44,7 @@ const AddProduct = () => {
     }
   return (
     <div className="text-center mb-5">
-      <h2 className="text-2xl font-bold text-center">Add A New Phone</h2>
+      <h2 className="text-2xl font-bold text-center">Add A New Product</h2>
 
       <form onSubmit={handleAddProduct}>
       <div className=" mx-auto flex flex-col items-center space-y-3 ">

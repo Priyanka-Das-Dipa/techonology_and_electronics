@@ -10,10 +10,11 @@ import SignUp from "./components/pages/SignUp";
 import Root from "./root/Root";
 import AddProduct from "./components/addProduct/AddProduct";
 import MyCart from "./components/myCart/MyCart";
-import BrandDetail from "./components/pages/Branddetails";
 import AuthProvider from "./provider/AuthProvider";
 import PrivateRoute from "./root/PrivateRoute";
 import BrandItems from "./components/pages/BrandItems";
+import UpdateProduct from "./components/UpdateProduct";
+import BrandDetail from "./components/pages/Branddetails";
 
 const router = createBrowserRouter([
   {
@@ -45,22 +46,41 @@ const router = createBrowserRouter([
 
       {
         path: "/myCart",
-        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyCart></MyCart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/brand/:brandName",
-        element: <PrivateRoute> <BrandItems /></PrivateRoute>,
-        
+        element: (
+          <PrivateRoute>
+            {" "}
+            <BrandItems />
+          </PrivateRoute>
+        ),
       },
       {
-        path: "/brand/:id",
+        path: "/brand/:brandName/:id",
         element: (
           <PrivateRoute>
             <BrandDetail></BrandDetail>
           </PrivateRoute>
-          
         ),
       },
+      {
+        path: "/update/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: ({ params }) =>
+          fetch(
+            `https://technology-and-electronics-server-dun.vercel.app/iPhone/${params.id}`
+          ),
+      },
+      // {
+      //   path: "/brand/:brandName/:productId",
+      //   element: <
+      // }
     ],
   },
 ]);
