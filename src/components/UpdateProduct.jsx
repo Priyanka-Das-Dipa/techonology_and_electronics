@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
-  const { name, brandName,_id, imageUrl, type, description, price, rating_1 } =
+  const { name, brandName, _id, imageUrl, type, description, price, rating_1 } =
     useLoaderData();
 
   // console.log(data)
@@ -32,8 +32,6 @@ const UpdateProduct = () => {
     // sending data to the backend
     fetch(
       `https://technology-and-electronics-server-dun.vercel.app/iPhone/${_id}`,
-      // `https://technology-and-electronics-server-dun.vercel.app/iPhone/${_id}`,
-      // "https://technology-and-electronics-server-dun.vercel.app/iPhone",
       {
         method: "PUT",
         headers: {
@@ -45,14 +43,13 @@ const UpdateProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Product Updated successfully!",
-            icon: "success",
-            confirmButtonText: "Done",
-          });
-        }
+
+        Swal.fire({
+          title: "Success!",
+          text: "Product Updated successfully!",
+          icon: "success",
+          confirmButtonText: "Done",
+        });
       });
   };
   return (

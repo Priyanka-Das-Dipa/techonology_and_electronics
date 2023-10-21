@@ -1,10 +1,14 @@
 // BrandDetail.js
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const BrandDetail = () => {
   const { id } = useParams();
   const [brandData, setBrandData] = useState(null);
+  const [cart, setCart] = useState([]);
+  const addToCart = (card) => {
+    setCart([...cart, card]);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,9 +29,10 @@ const BrandDetail = () => {
     <div className="">
       {brandData ? (
         <div className="flex justify-center">
+        
           <div className="card w-1/2 card-side bg-base-100 shadow-xl">
             <figure className="w-1/2">
-              <img
+              <img className="p-10"
                 src={brandData.imageUrl}
                 alt="image"
               />
@@ -39,7 +44,9 @@ const BrandDetail = () => {
               <p className="text-xl"> <span className="text-xl font-semibold"> Type: </span>  {brandData.type}</p>
               <p className="text-xl"> <span className="text-xl font-semibold"> Description: </span>  {brandData.description}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Add to Card</button>
+                <Link to="/myCart">
+                <button  onClick={() => addToCart(brandData)} className="btn ">Add to Card</button>
+                </Link>
               </div>
             </div>
           </div>

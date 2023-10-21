@@ -28,36 +28,31 @@ const Home = () => {
       </section>
 
       <section>
-        <h1 className="text-3xl font-semibold text-center my-6">Our Brand</h1>
+        <h1 className="text-5xl font-semibold text-center py-8">Our Brand</h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
           {phonesBrand?.map((phoneBrand) => (
             <div key={phoneBrand.id}>
               <Link to={`/brand/${phoneBrand.brand_name}`}>
-                <div className="card card-compact  bg-base-100 shadow-xl">
+                <div className="card bg-base-100 shadow-xl image-full">
                   <figure>
-                    <img
-                      className="bg-transparent w-full"
-                      src={phoneBrand.image_url}
-                      alt="Phones"
-                    />
+                    <img width='450px' src={phoneBrand.image_url} alt="Shoes" />
                   </figure>
                   <div className="card-body">
-                    <h2 className="text-2xl font-semibold text-center">
-                      {phoneBrand.brand_name}
-                    </h2>
+                    <h2 className="card-title">{phoneBrand.brand_name}</h2>
                   </div>
                 </div>
+                
               </Link>
             </div>
           ))}
         </div>
       </section>
+      <section className="mt-10">
+        <About></About>
+      </section>
 
       <section className="mt-10">
         <FAQ></FAQ>
-      </section>
-      <section className="mt-10">
-        <About></About>
       </section>
     </div>
   );

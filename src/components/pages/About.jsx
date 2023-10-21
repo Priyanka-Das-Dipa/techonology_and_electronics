@@ -2,7 +2,7 @@ const About = () => {
     return (
         <>
         <div>
-            <h1 className="text-5xl font-semibold text-center p-10">About Us</h1>
+            <h1 className="text-5xl font-semibold text-center py-8">Product Gallery </h1>
             <p className="text-2xl text-center mb-10 "> We provide our best collection to You!!</p>
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">

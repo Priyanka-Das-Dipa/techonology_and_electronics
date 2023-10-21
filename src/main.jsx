@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         path: "/myCart",
         element: (
           <PrivateRoute>
-            <MyCart></MyCart>
+            <MyCart ></MyCart>
           </PrivateRoute>
         ),
       },
@@ -76,11 +76,7 @@ const router = createBrowserRouter([
           fetch(
             `https://technology-and-electronics-server-dun.vercel.app/iPhone/${params.id}`
           ),
-      },
-      // {
-      //   path: "/brand/:brandName/:productId",
-      //   element: <
-      // }
+      }
     ],
   },
 ]);
