@@ -5,8 +5,6 @@ const BrandItems = () => {
   const { brandName } = useParams();
   const [phoneBrand, setPhoneBrand] = useState([]);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   console.log(brandName);
   useEffect(() => {
     fetch(
@@ -50,7 +48,9 @@ const BrandItems = () => {
                 <h2 className="text-2xl font-medium"> Brand Name: <span className="font-bold"> {phone.brandName}</span></h2>
                 <h2 className="text-2xl font-medium">Price: <span className="font-bold"> {phone.price}</span></h2>
               </div>
-            <img src={phone.imageUrl} alt={phone.name} className="w-full p-10" />
+           <div className="p-10">
+           <img src={phone.imageUrl} alt={phone.name} className="w-full p-10 " />
+           </div>
             </div>
           </div>
         ))}
