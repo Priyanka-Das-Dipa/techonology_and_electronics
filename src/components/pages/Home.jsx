@@ -35,13 +35,12 @@ const Home = () => {
               <Link to={`/brand/${phoneBrand.brand_name}`}>
                 <div className="card bg-base-100 shadow-xl image-full">
                   <figure>
-                    <img width='450px' src={phoneBrand.image_url} alt="Shoes" />
+                    <img width="450px" src={phoneBrand.image_url} alt="Shoes" />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{phoneBrand.brand_name}</h2>
                   </div>
                 </div>
-                
               </Link>
             </div>
           ))}

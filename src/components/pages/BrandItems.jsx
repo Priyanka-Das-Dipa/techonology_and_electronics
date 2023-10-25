@@ -4,10 +4,10 @@ import { Link, useParams } from "react-router-dom";
 const BrandItems = () => {
   const { brandName } = useParams();
   const [phoneBrand, setPhoneBrand] = useState([]);
-  
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // console.log(brandName);
+  console.log(brandName);
   useEffect(() => {
     fetch(
       "https://technology-and-electronics-server-qpndtqici-priyanka-das-dipa.vercel.app/iPhone"
@@ -36,43 +36,32 @@ const BrandItems = () => {
     }
     return stars;
   };
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === phoneBrand.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? phoneBrand.length - 1 : prevIndex - 1
-    );
-  };
+  
 
   return (
     <>
-      <div className="slider-container mb-10">
-        <div className="slider">
-          {phoneBrand.map((phone, index) => (
-            <div key={index}
-            className={`slide ${index === currentIndex ? "active" : ""}`}
-            >
-              <img
-                src={phone.imageUrl}
-                alt={phone.name}
-                className="slide-image"
-              />
+      <div className="mx-auto text-center">
+      <div className="carousel w-[40vw] h-[70vh]">
+        {phoneBrand.slice(0, 3).map((phone, index) => (
+          <div key={index} id="item1" className="carousel-item w-full">
+            <div className="flex gap-10  justify-center items-center p-5">
+              <div className="mb-5">
+                <h2 className="text-2xl font-medium">Phone Name: <span className="font-bold"> {phone.name}</span></h2>
+                <h2 className="text-2xl font-medium"> Brand Name: <span className="font-bold"> {phone.brandName}</span></h2>
+                <h2 className="text-2xl font-medium">Price: <span className="font-bold"> {phone.price}</span></h2>
+              </div>
+            <img src={phone.imageUrl} alt={phone.name} className="w-full p-10" />
             </div>
-          ))}
-        </div>
-        <a onClick={prevSlide} className="btn btn-circle">❮</a> 
-      <a onClick={nextSlide} className="btn btn-circle">❯</a>
+          </div>
+        ))}
       </div>
-
+      </div>
+      
       <div className="min-h-screen mt-10">
         {phoneBrand.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {phoneBrand.map((phone, index) => (
-              <div key={index}  className="card w-96 bg-base-100 shadow-xl">
+              <div key={index} className="card w-96 bg-base-100 shadow-xl">
                 <figure className="p-5">
                   <img src={phone.imageUrl} alt="image" />
                 </figure>
