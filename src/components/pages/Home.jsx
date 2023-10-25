@@ -23,7 +23,7 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <img width="550px" src="../../../images/bannerImage.jpg" alt="" />
+          <img width="550px" src="https://i.ibb.co/0yJrw0M/banner-Image.jpg" alt="" />
         </div>
       </section>
 
