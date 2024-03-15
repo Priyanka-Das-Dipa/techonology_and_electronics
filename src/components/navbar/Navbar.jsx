@@ -2,6 +2,7 @@
 import { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { CiLight } from "react-icons/ci";
 // import './index.css';
 
 const Navbar = () => {
@@ -58,10 +59,10 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar ">
+      <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -76,7 +77,7 @@ const Navbar = () => {
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
-            </label>
+            </div>
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
@@ -84,39 +85,63 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          {/* <FontAwesomeIcon icon="fa-solid fa-laptop-mobile" /> */}
-          <a className=" normal-case text-xl font-bold">
-            Technology & Electronics
-          </a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
-        </div>
-        <div className="navbar-end">
-          {user ? (
-            <>
-              <span>{user.email}</span>
-              <Link
-                onClick={handleLogOut}
-                className="btn btn-sm font-medium"
-                to="/login"
-              >
-                Sign Out
-              </Link>
-            </>
-          ) : (
-            <Link className="btn btn-sm font-medium" to="/login">
-              Sign In
-            </Link>
-          )}
+          <a className="text-xl font-bold">Technology & Electronics</a>
         </div>
 
-        <input
-          onClick={toggleTheme}
-          type="checkbox"
-          className="toggle toggle-sm"
-          checked
-        />
+        <div className="navbar-end">
+          <div className=" hidden lg:flex">
+            <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          </div>
+          <div>
+            <button onClick={toggleTheme}>
+              <CiLight className="text-3xl font-extrabold mx-2"/>
+            </button>
+          </div>
+          {user ? (
+            <>
+              <div className="dropdown dropdown-end">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-center"
+                >
+                  <li>
+                    <a>Profile</a>
+                  </li>
+                  <li>
+                    <a>{user.email}</a>
+                  </li>
+                  <li>
+                    <Link
+                      onClick={handleLogOut}
+                      className="text-red-600 font-bold hover:bg-red-300"
+                      to="/login"
+                    >
+                      Sign Out
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </>
+          ) : (
+            <>
+              <Link className="btn btn-sm font-medium" to="/login">
+                Sign In
+              </Link>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
