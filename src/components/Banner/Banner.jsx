@@ -28,9 +28,9 @@ const Banner = () => {
     return () => clearInterval(intervalId);
   }, [nextSlider]);
 
-  
+
   return (
-    <section className="mt-5">
+    <section className="mt-5 mb-28">
       <div className="h-60 w-full md:h-[470px] lg:h-[540px] relative overflow-hidden">
         {/* arrow left */}
         <button

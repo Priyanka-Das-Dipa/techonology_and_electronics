@@ -1,0 +1,75 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "img_url": "https://i.ibb.co/HPyMR33/Samsung-QLED-Q70-Series-55-Inch.jpg",
+        "price": 799.99,
+        "type": "tv",
+        "model_name": "Samsung QLED Q70 Series 55-Inch"
+      },
+      {
+        "id": 2,
+        "img_url": "https://i.ibb.co/hZPfbKG/Dell-XPS-15.webp",
+        "price": 1299.99,
+        "type": "laptop",
+        "model_name": "Dell XPS 15"
+      },
+      {
+        "id": 3,
+        "img_url": "https://i.ibb.co/k9gTmtX/i-Phone-13-Pro.webp",
+        "price": 999.99,
+        "type": "smartphone",
+        "model_name": "iPhone 13 Pro"
+      },
+      {
+        "id": 4,
+        "img_url": "https://i.ibb.co/0cghzhv/LG-OLED-C1-Series-65-Inch.jpg",
+        "price": 1199.99,
+        "type": "tv",
+        "model_name": "LG OLED C1 Series 65-Inch"
+      },
+      {
+        "id": 5,
+        "img_url": "https://i.ibb.co/PGngr8Y/HP-Spectre-x360.webp",
+        "price": 899.99,
+        "type": "laptop",
+        "model_name": "HP Spectre x360"
+      },
+      {
+        "id": 6,
+        "img_url": "https://i.ibb.co/VmtFpcR/Samsung-Galaxy-S21.jpg",
+        "price": 699.99,
+        "type": "smartphone",
+        "model_name": "Samsung Galaxy S21"
+      },
+      {
+        "id": 7,
+        "img_url": "https://i.ibb.co/HPyMR33/Samsung-QLED-Q70-Series-55-Inch.jpg",
+        "price": 1599.99,
+        "type": "tv",
+        "model_name": "Sony Bravia OLED A80J 65-Inch"
+      },
+      {
+        "id": 8,
+        "img_url": "https://i.ibb.co/PcjrvD1/Mac-Book-Pro-13-Inch-M1.webp",
+        "price": 1099.99,
+        "type": "laptop",
+        "model_name": "MacBook Pro 13-Inch M1"
+      },
+      {
+        "id": 9,
+        "img_url": "https://i.ibb.co/k9gTmtX/i-Phone-13-Pro.webp",
+        "price": 799.99,
+        "type": "smartphone",
+        "model_name": "Google Pixel 6 Pro"
+      },
+      {
+        "id": 10,
+        "img_url": "https://i.ibb.co/1TQ5tF8/Sony-WH-1000-XM4.jpg",
+        "price": 349.99,
+        "type": "headphones",
+        "model_name": "Sony WH-1000XM4"
+      }
+    ]
+  }
+  

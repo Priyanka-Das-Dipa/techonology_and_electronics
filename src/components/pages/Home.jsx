@@ -2,13 +2,16 @@ import { Link, useLoaderData } from "react-router-dom";
 import FAQ from "./FAQ";
 import About from "./About";
 import Banner from "../Banner/Banner";
+import Featured from "../featured/Featured";
+
 
 const Home = () => {
   const phonesBrand = useLoaderData();
 
   return (
     <div className="">
-      <Banner></Banner>
+    <Banner></Banner>
+    <Featured></Featured>
       <section>
         <h1 className="text-5xl font-semibold text-center py-8">Our Brand</h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
