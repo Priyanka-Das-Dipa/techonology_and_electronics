@@ -1,9 +1,9 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { CiLight } from "react-icons/ci";
-// import './index.css';
+
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -58,8 +58,8 @@ const Navbar = () => {
   );
 
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div className="bg-black text-white">
+      <div className="navbar max-w-7xl mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -89,8 +89,8 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
-          <div className=" hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          <div className=" hidden lg:flex lg:gap-2">
+            <ul className="menu menu-horizontal px-1 ">{navLinks}</ul>
           </div>
           <div>
             <button onClick={toggleTheme}>
