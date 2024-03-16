@@ -22,7 +22,7 @@ const FeaturedCard = () => {
         {products.map((product, index) => (
           <div
             key={index}
-            className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 my-20 bg-white mx-4"
+            className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 my-20 bg-white mx-0 md:mx-4"
           >
             <div className="flex justify-center w-full h-48 lg:h-[280px] relative">
               <div className="flex justify-between items-center left-4 right-4 top-4 absolute">

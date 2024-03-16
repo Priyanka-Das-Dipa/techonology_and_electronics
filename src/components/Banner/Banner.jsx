@@ -105,7 +105,7 @@ const Banner = () => {
             <img
               key={slide}
               src={slide}
-              className="min-w-full h-60 bg-black/20 sm:h-96 md:h-[540px] object-cover"
+              className="min-w-full h-60 bg-black/20 sm:h-96 md:h-[540px] bg-cover"
               alt={`Slider - ${inx + 1}`}
             />
           ))}

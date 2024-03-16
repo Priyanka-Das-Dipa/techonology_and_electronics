@@ -1,32 +1,32 @@
 [
     {
         "id": 1,
-        "image_url": "https://i.ibb.co/CMK7t6T/Samsung-Phone.jpg",
+        "image_url": "https://i.ibb.co/5Wm5g6Z/Samsung-Phone.jpg",
         "brand_name": "Samsung"
     },
     {
         "id": 2,
-        "image_url": "https://i.ibb.co/gtSC778/relLogo.png",
+        "image_url": "https://i.ibb.co/1KN5M6B/realme.jpg",
         "brand_name": "Realme"
     },
     {
         "id": 3,
-        "image_url": "https://i.ibb.co/f8Kgjfj/Intel-Phone.png",
+        "image_url": "https://i.ibb.co/rdqm85b/intel.png",
         "brand_name": "Intel"
     },
     {
         "id": 4,
-        "image_url": "https://i.ibb.co/jwKSjfp/m011t0447-b-social-sign-18sep22.jpg",
+        "image_url": "https://i.ibb.co/JFCYrnT/google.jpg",
         "brand_name": "Google"
     },
     {
         "id": 5,
-        "image_url": "https://i.ibb.co/RPgs58Q/iphone-Brand.jpg",
+        "image_url": "https://i.ibb.co/cXrs2Ld/apple.jpg",
         "brand_name": "Apple"
     },
     {
         "id": 6,
-        "image_url": "https://i.ibb.co/s18m8vZ/sony-Phone.webp",
+        "image_url": "https://i.ibb.co/PwDnGdV/sony-firm-bw-logo-wallpaper-preview.jpg",
         "brand_name": "Sony"
     }
 ]
