@@ -34,36 +34,47 @@ const BrandItems = () => {
     }
     return stars;
   };
-  
 
   return (
     <>
-      <div className="mx-auto text-center">
-      <div className="carousel w-[40vw] h-[70vh]">
-        {phoneBrand.slice(0, 3).map((phone, index) => (
-          <div key={index} id="item1" className="carousel-item w-full">
-            <div className="flex gap-10  justify-center items-center p-5">
-              <div className="mb-5">
-                <h2 className="text-2xl font-medium">Phone Name: <span className="font-bold"> {phone.name}</span></h2>
-                <h2 className="text-2xl font-medium"> Brand Name: <span className="font-bold"> {phone.brandName}</span></h2>
-                <h2 className="text-2xl font-medium">Price: <span className="font-bold"> {phone.price}</span></h2>
+      <div className="mx-auto text-center mt-5 ">
+        <div className="carousel w-full h-[70vh] bg-[#b07d62] rounded-lg">
+          {phoneBrand.slice(0, 3).map((phone, index) => (
+            <div key={index} id="item1" className="carousel-item w-full px-20">
+              <div className="flex justify-between items-center">
+                <div className="mb-5">
+                  <h2 className="text-2xl font-medium">
+                    Phone Name: <span className="font-bold"> {phone.name}</span>
+                  </h2>
+                  <h2 className="text-2xl font-medium">
+                    {" "}
+                    Brand Name:{" "}
+                    <span className="font-bold"> {phone.brandName}</span>
+                  </h2>
+                  <h2 className="text-2xl font-medium">
+                    Price: <span className="font-bold"> {phone.price}</span>
+                  </h2>
+                </div>
+                <div className="">
+                  <img
+                    src={phone.imageUrl}
+                    alt={phone.name}
+                    className="w-full p-10 bg-cover h-[350px] ml-32"
+                  />
+                </div>
               </div>
-           <div className="p-10">
-           <img src={phone.imageUrl} alt={phone.name} className="w-full p-10 " />
-           </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-      </div>
-      
-      <div className="min-h-screen mt-10">
+
+      <div className="min-h-screen mt-5 ">
         {phoneBrand.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {phoneBrand.map((phone, index) => (
               <div key={index} className="card w-96 bg-base-100 shadow-xl">
                 <figure className="p-5">
-                  <img src={phone.imageUrl} alt="image" />
+                  <img src={phone.imageUrl} alt="image" className="h-[150px]"/>
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title text-2xl text-center">
