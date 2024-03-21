@@ -50,12 +50,12 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero h-[70vh] bg-base-200">
+      <div className="hero h-[70vh] ">
         <div className="">
           <h1 className="text-2xl text-center font-semibold mb-5">
             Please Login Yourself
           </h1>
-          <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
+          <div className=" w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
