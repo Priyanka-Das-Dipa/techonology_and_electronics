@@ -117,10 +117,10 @@ const Navbar = () => {
                   className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-center"
                 >
                   <li>
-                    <a>Profile</a>
+                    <a className="text-black">Profile</a>
                   </li>
                   <li>
-                    <a>{user.email}</a>
+                    <a className="text-black">{user.email}</a>
                   </li>
                   <li>
                     <Link
